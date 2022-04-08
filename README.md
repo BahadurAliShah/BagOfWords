@@ -1,0 +1,2 @@
+# BagOfWords
+In this problem you will write a program that reads one or more documents and uses it to build a large dataset of words called "Bag-of-Words" (BoW for short), disregarding grammar and word order by keeping multiplicity (frequency). BoW is a representatisson of text that describes the occurrence of words within a document where the order of words is not taken into account. This is a text preprocessing technique.
