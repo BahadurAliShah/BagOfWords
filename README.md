@@ -16,3 +16,62 @@ Suppose we have following text files (input.txt, document1.txt & document2.txt):
     Example:
       a. document1.txt: “John likes to , watch movies. Mary: likes movies too.”
       b. document2.txt: “Mary also’ likes # to& watch football games.”
+
+# Steps:
+Step 01:
+  a. You will read Stop Words form input.txt file
+  b. Read one or more documents whose path is mentioned in input.txt file (For example,document1.txt & document2.txt file).
+
+  Function Prototype:
+      void readInput(const char* pathofInputFile)
+          pathofInputFile indicates path of input.txt file.
+
+      Note: you must read the input and documents (document1.txt & document2.txt, ...) text file once (you will be awarded no points, if you read text files multiple times). And save the data in classes (it can be templatized).
+Step 02:
+Process (or Preprocess, to be technically correct) the documents as follows:
+  a. Remove all the punctuations marks (.~ ! @ # $ % ^ & * ( ) _ + = “ ; : / ? > , < ). Including ‘\n’ (newline) & extra spaces.
+    Note: Remember
+      • Output must only contain alphabets and space characters.
+      • There must be single space between two words.
+    Output:
+      • “John likes to watch movies Mary likes movies too”
+      • “Mary also likes to watch football games”
+   b. Convert all upper case letters to lower case.
+     Output:
+        • “john likes to watch movies mary likes movies too”
+        • “mary also likes to watch football games”
+   c. Remove stop words
+      Output:
+        • “john likes watch movies mary likes movies”
+        • “mary likes watch football games”
+
+      Function Prototypes:.
+         1. void removePunctuationMarks()
+            This function will remove punctuation marks according to Step 02.a
+         2. void convertUpperToLowerCase()
+            This function will convert upper case letters to lower case letters according to Step 02.b
+         3. void removeStopWords()
+            This function will remove stop words according to Step 02.c
+         4. int getNumberOfDocument()
+            This function will return number of documents.
+         5. char * getText(int documentNumber)
+            This function will return document text as char array (char*) according to document number.
+            Note: getNumberOfDocument & getText functions will be used for testing purposes
+  Step 03:
+    Now generate bag of words.
+    Term Document1 Document2
+    john 1 0
+    likes 2 1
+    watch 1 1
+    movies 2 0
+    mary 1 1
+    football 0 1
+    games 0 1
+
+    Write bag of words on to the file (BoW.txt)
+    Note: unique words must be extracted according to the document’s order i-e order should be
+    maintained (first unique word should be “john” then “likes”, so on).
+
+    Function Prototype:
+    void generateBagofWords (const char* pathofBoWFile)
+    pathofBoWFile indicates path of BoW.txt file.
