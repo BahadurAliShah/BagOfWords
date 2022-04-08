@@ -1,0 +1,7 @@
+john 1 0
+likes 2 1
+watch 1 1
+movies 2 0
+mary 1 1
+football 0 1
+games 0 1
